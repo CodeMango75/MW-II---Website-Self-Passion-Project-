@@ -1,0 +1,368 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap');
+
+/* Header Styling */ 
+
+.opening-header{
+    text-align: center;
+    text-decoration: none;
+    font-size: small;
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    height: 20px;
+    background-color: #333;
+    color: aliceblue;
+}
+
+
+/* Navigation Menu Styling */
+.nav-container{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-image: url("https://img.freepik.com/free-vector/seamless-gold-rhombus-grid-pattern-black-background_53876-97589.jpg?semt=ais_hybrid&w=740&q=80");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    border: 2px dotted rgb(221, 216, 216);
+}
+
+.nav-bar{
+    display: flex;                 /* MAIN FIX */
+    justify-content: space-between;/* LEFT - CENTER - RIGHT */
+    align-items: center;           /* vertically centered */
+    padding: 10px 20px;
+    position: relative;
+}
+
+.left-name{
+  font-family: "Orbitron", sans-serif;
+  font-weight: bolder;
+  color: white;
+  font-size: 24px;
+  letter-spacing: 5px;
+  margin-left: 20px;
+}
+
+.menu-lists{
+    font-family: "Sofia Sans Extra Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    color: white;
+}
+
+.patch-notes{
+  font-family: "Sofia Sans Extra Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-style: normal;
+  color: white; 
+  margin-right: 50px;
+}
+
+/* Hero Section Styling */
+
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* full-screen hero */
+    overflow: hidden;
+}
+
+
+/* Video CSS */ 
+#hero-video {
+    position: absolute;  
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* keeps video inside boundaries */
+}
+
+.hero-content {
+    position: relative;
+    margin-top: 200px;
+    color: #f1f1f1;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+
+    /* ADD THIS 👇 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  /* centers button */
+}
+
+.hero-content h1{
+    font-family: "Orbitron", sans-serif;
+    font-size: 42px;
+    font-weight: 500;
+}
+
+.button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* this centers text INSIDE button */
+    border-radius: 5px;
+    background: #183153;
+    font-family: "Montserrat", sans-serif;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    color: white;
+    margin-top: 25px;
+}
+.button:after {
+  content: " ";
+  width: 0%;
+  height: 100%;
+  background: #ffd401;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: 0;
+}
+
+.button:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+button:hover span {
+  color: #183153;        /* Dark text on yellow bg */
+  animation: scaleUp 0.3s ease-in-out;
+}
+.button span {
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 18px 25px;
+  color: #fff;
+  font-size: 1.125em;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover span {
+  color: #183153;
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.features-section {
+    padding: 50px;
+    background: #000;
+    color: #fff;
+    font-family: "Orbitron", sans-serif;
+}
+
+.features-container {
+    display: flex;
+    gap: 40px;
+}
+
+/* LEFT SIDE ------------------------------------------------*/
+.left-features {
+    flex: 1;
+}
+
+/* Big Card (Carousel) */
+.big-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 300px;
+}
+
+.big-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.map-info {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+}
+
+.arrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Two Medium Cards */
+.small-cards {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.small-card {
+    width: 50%;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+.small-card:hover {
+    transform: scale(1.05);
+}
+
+.small-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+.small-card h3 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+/* RIGHT SIDE -----------------------------------------------*/
+.right-features {
+    flex: 1;
+}
+
+.live-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.live-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.live-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.red-dot {
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 50%;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Play Button */
+.play-btn {
+    margin-top: 15px;
+    padding: 15px 20px;
+    font-family: "Orbitron", sans-serif;
+    /* background: transparent; */
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.play-btn:hover {
+    box-shadow: 0 0 10px #fff;
+}
+
+/* POI cards */
+.poi-cards {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.poi-card {
+    flex: 1 1 calc(50% - 10px);
+    padding: 15px;
+    border-radius: 10px;
+    background: #111;
+    text-align: center;
+    font-size: 14px;
+}
+
+.br-section {
+    width: 100%;
+    min-height: 80vh;
+    background: url('/Details/Assets/Battle-Royale.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5c5050;
+    background-image: url("https://cdna.artstation.com/p/assets/images/images/073/250/926/large/ben-lisle-09-br-plunder.jpg?1709227384");
+    height: 800px;
+    
+}
+
+.br-content{
+    text-align: center;
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    backdrop-filter: blur(6px);
+    padding: 40px;
+    border-radius: 12px;
+}
+
+/* BUTTON */
+.enter-br {
+    margin-top: 20px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    border: 2px solid #ffae00;
+    background: transparent;
+    color: #ffae00;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.enter-br:hover {
+    background: #ffae00;
+    color: black;
+    transform: scale(1.1);
+}
